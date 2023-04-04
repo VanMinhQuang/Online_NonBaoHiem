@@ -1,0 +1,67 @@
+﻿@model Online_NonBaoHiem.Models.CustomerAccount
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Detail</h2>
+
+<div>
+    <h4>CustomerAccount</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerPass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerPass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerDISPLAYNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerDISPLAYNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerSDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerSDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerDIACHI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerDIACHI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerEmail)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdCustomer }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

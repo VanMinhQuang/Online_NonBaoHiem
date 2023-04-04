@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Online_NonBaoHiem.Models.AdminAccount>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th> Mã tài khoản </th>
+            <th> Tên tài khoản</th>
+            <th> Tên hiển thị</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.IdAdmin)</td>
+                <td>@Html.DisplayFor(modelItem => item.UserName)</td>
+                <td>@Html.DisplayFor(modelItem => item.DISPLAYNAME)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.IdAdmin })
+                    @Html.ActionLink("Detail", "Detail", new { id = item.IdAdmin })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IdAdmin })
+                </td>
+            </tr>
+        }
+    </table>
+

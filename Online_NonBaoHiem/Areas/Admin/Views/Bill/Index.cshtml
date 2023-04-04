@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Online_NonBaoHiem.Models.Bill>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>ORDER CỦA KHÁCH</h2>
+
+<table class="table">
+    <tr>
+        <th> Mã Order </th>
+        <th> Thanh toán</th>
+        <th> Giao Hàng</th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.IdBill)</td>
+            <td>@Html.DisplayFor(modelItem => item.ThanhToan)</td>
+            <td>@Html.DisplayFor(modelItem => item.GiaoHang)</td>
+            <td>@Html.DisplayFor(modelItem => item.NgayDat)</td>
+            <td>@Html.DisplayFor(modelItem => item.NgayGiao)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdBill })
+                @Html.ActionLink("Detail", "Detail", new { id = item.IdBill })
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdBill })
+            </td>
+        </tr>
+    }
+</table>

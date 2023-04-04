@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Online_NonBaoHiem.Models.Helmet>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>DANH SÁCH NÓN</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th> Mã loại </th>
+        <th> Tên sách</th>
+        <th> Giá bán</th>
+        <th></th>   
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.IdHelmet)</td>
+            <td>@Html.DisplayFor(modelItem => item.HelmetName)</td>
+            <td>@Html.DisplayFor(modelItem => item.Price)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdHelmet })
+                @Html.ActionLink("Detail", "Detail", new { id = item.IdHelmet })
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdHelmet })
+            </td>
+        </tr>
+    }
+</table>

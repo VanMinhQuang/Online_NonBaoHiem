@@ -1,0 +1,22 @@
+﻿@model Online_NonBaoHiem.Models.Helmet
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Chi tiết nón</h2>
+
+<h2>@Html.DisplayFor(model => model.HelmetName)</h2>
+
+<div class="col-sm-12">
+    <div class="thumbnail">
+        <img src="@Html.DisplayFor(model => model.Thumbnail)" alt="Hình thumbnail rubik" />
+    </div>
+    <div class="caption">
+        <p class="text">Ngày cập nhật: @Html.DisplayFor(model => model.UpdateTime)</p>
+        <p class="text">Giá: @Html.DisplayFor(model => model.Price)</p>
+        <p>
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</div>

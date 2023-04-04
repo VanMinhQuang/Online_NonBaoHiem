@@ -1,0 +1,22 @@
+﻿@model Online_NonBaoHiem.Models.AdminAccount
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>TÀI KHOẢN NHÂN VIÊN</h2>
+
+<h2>@Html.DisplayFor(model => model.DISPLAYNAME)</h2>
+
+<div class="col-sm-12">
+    <div class="caption">
+        <p class="text">Tài khoản: @Html.DisplayFor(model => model.UserName)</p>
+        <p class="text">Password: @Html.DisplayFor(model => model.Pass)</p>
+        <p class="text">Địa chỉ: @Html.DisplayFor(model => model.DIACHI)</p>
+        <p class="text">Số điện thoại: @Html.DisplayFor(model=>model.SDT)</p>
+        <p>
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</div>
+

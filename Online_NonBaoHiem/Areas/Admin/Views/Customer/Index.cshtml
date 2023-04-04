@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Online_NonBaoHiem.Models.CustomerAccount>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Danh sách Account Khách Hàng</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Mã khách
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerUserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerPass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerDISPLAYNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerSDT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerDIACHI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerEmail)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdCustomer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerUserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerPass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerDISPLAYNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerSDT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerDIACHI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerEmail)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Detail", new { id=item.IdCustomer }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdCustomer })
+        </td>
+    </tr>
+}
+
+</table>

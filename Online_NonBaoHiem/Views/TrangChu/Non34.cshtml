@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Online_NonBaoHiem.Models.Helmet>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel page-header">
+                @item.HelmetName
+            </div>
+            <div class="panel-body">
+                <p><strong>Giá: </strong>@item.Price</p>
+            </div>
+            <div class="panel-footer clearfix">
+                <div class="pull-right">
+                    <div class="DatMua">
+                        <a class="btn btn-success" href="@Url.Action("ThemGioHang","GioHang",new {@id = item.IdHelmet,@strURL = Request.Url.ToString() })">
+                            Đặt mua
+                        </a>
+                    </div>
+                    <br />
+                    @Html.ActionLink("Read more...", "Detail", new
+                    {
+                        id =
+                    item.IdHelmet
+                    }, new { @class = "btn btn-default" })
+                </div>
+            </div>
+        </div>
+    </div>
+            }
+
+    </div>
+
+

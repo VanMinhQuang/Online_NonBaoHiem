@@ -1,0 +1,7 @@
+﻿.khung{
+    max-width: 600px;
+    min-height: 300px;
+    margin:auto;
+    border: 1px solid #808080;
+    border-radius: 10px;
+}
